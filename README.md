@@ -73,6 +73,15 @@ README.md
 
 ---
 
+## Logs
+
+Logs are stored in `bot.log` and include:
+- Market order execution
+- Limit order execution
+- API request & response details
+
+---
+
 ## 🔮 Future Improvements
 
 - Add stop-loss and take-profit
