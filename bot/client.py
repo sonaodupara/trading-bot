@@ -1,18 +1,20 @@
-import os
 from binance.client import Client
+import os
 from dotenv import load_dotenv
 
+# Load environment variables from .env file
 load_dotenv()
 
-def get_client():
-    api_key = os.getenv("API_KEY")
-    api_secret = os.getenv("API_SECRET")
+# Fetch API credentials
+API_KEY = os.getenv("API_KEY")
+API_SECRET = os.getenv("API_SECRET")
 
-    client = Client(api_key, api_secret)
-    client.FUTURES_URL = "https://testnet.binancefuture.com/fapi"
-    client._timestamp_offset = 1000
+# Validate keys
+if not API_KEY or not API_SECRET:
+    raise ValueError("API_KEY and API_SECRET must be set in .env file")
 
-    # IMPORTANT: connect to testnet
-    client.FUTURES_URL = "https://testnet.binancefuture.com/fapi"
+# Create Binance client
+client = Client(API_KEY, API_SECRET)
 
-    return client
+# Set Futures Testnet URL (IMPORTANT)
+client.FUTURES_URL = "https://testnet.binancefuture.com"

@@ -82,6 +82,24 @@ Logs are stored in `bot.log` and include:
 
 ---
 
+### Stop-Limit Order
+
+python -m bot.cli --symbol BTCUSDT --side BUY --type STOP --quantity 0.001 --price 60000 --stop_price 59000
+
+---
+
+## Bonus Feature
+
+### Stop Order (STOP_MARKET)
+
+This project also supports STOP_MARKET orders.
+
+Example:
+
+python -m bot.cli --symbol BTCUSDT --side BUY --type STOP --quantity 0.001 --stop_price 59000
+
+---
+
 ## 🔮 Future Improvements
 
 - Add stop-loss and take-profit
