@@ -1,6 +1,1 @@
-.env
-.venv/
 __pycache__/
-*.pyc
-.idea/
-bot.log
